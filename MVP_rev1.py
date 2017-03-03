@@ -11,13 +11,22 @@ import pyaudio
 import wave
 import sys
 
-class Keyboard:
-    def __init__(self, keys):
+class Controller(object):
+    def __init__(self,model):
+        self.model = model
+    def input_event(self,event):
+        if event.type == #keyboard input:
+            for model in self.models:
+                if model.contains_pt(     ):#whatever the keyboard input above was
+                    model.reset()
+                    break
+        elif event.type == #another Keyboard input
+        #same thing
 
 
-class View:
-    def __init__(self):
-
+class View(object):
+    def __init__(self,model):
+        self.model = model
 
     def notes():
 
@@ -188,6 +197,8 @@ class View:
         else:
             return False
 
+
+
 if __name__ ==  "__main__":
     pygame.init()
     screen = pygame.display.set_mode((800, 600)) # window size, as a tuple
@@ -198,6 +209,7 @@ if __name__ ==  "__main__":
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+            if event.type ==
 
         screen.fill((0,0,0)) # RGB tuple for black
         pygame.display.update()
