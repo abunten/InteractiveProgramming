@@ -2,5 +2,6 @@ import pysynth
 import numpy
 import pysynth_b
 
-test = (('g5', 4), ('r', 20))
-pysynth_b.make_wav(test, fn = "g5.wav")
+test = (('g#3', 8), ('r', 4))
+
+pysynth_b.make_wav(test, fn = "g#3.wav")
