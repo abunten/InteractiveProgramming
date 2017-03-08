@@ -1,5 +1,5 @@
 '''''
-Interactive Programming: Visual Sound Rev 1
+Interactive Programming: Visualizing Music
 
 author@ Maggie Rosner & Aurora Bunten
 
@@ -12,30 +12,47 @@ import wave
 import sys
 
 class Shape(object):
+    '''
+    the shaps class creates objects that are defined by the note they represent
+    '''
     def __init__(self, note):
         self.note = note
         self.disp = False
 
 
 class Controller(object):
+    '''
+    The controller class calls a specific shape object based on the key pressed.
+    the shape is associated with a specific note which will change the shape_disp
+    to True and play the wave file associated with the note.
+    '''
     def __init__(self, model):
         self.model = model
-        self.octive = 4
+        self.octave = 4     #sets the default octave to the 4th (middle C)
     def input_event(self,event):
-        is_audio_event = False
+        is_audio_event = False  #sets the initial condition for an event (shape display) to False
+        '''
+        the conditions below set the octave based on certain number keys that are pressed
+        '''
+        if event.type == pygame.KEYDOWN: #if a key is pressed
+            if event.key == pygame.K_5: #if the number 5 key is pressed
+                self.octave = 5 #play notes in the 5th octave
+            elif event.key == pygame.K_4:   #if the number 4 key is pressed
+                self.octave = 4 #play notes in the 4th octave
+            elif event.key == pygame.K_3:   #if the number 3 key is pressed
+                self.octave = 3 #play notes in the 3rd octave
 
-        #keys = pygame.key.get_pressed()
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_5:#next octive starts her
-                self.octive = 5
-            elif event.key == pygame.K_4:
-                self.octive = 4
-            elif event.key == pygame.K_3:
-                self.octive = 3
-
-            if self.octive == 4:
+            if self.octave == 4:
+                '''
+                If you push down crtl and the key assigned the note played will be flat
+                in that octave. If you push down Shift and the key assigned to that note
+                the note played will be a sharp in that octave. If you simply push down
+                the key assigned to the note it will play the natural note. Each differet
+                note has a different wave file assigned to it that will play when the
+                correct key/keys are pressed.
+                '''
                 if event.key == pygame.K_a and (event.mod & pygame.KMOD_CTRL):
-                    #print('aaaaaaaaaaaaaaaa')
+                    #print('aaaaaabbbbbbb444')
                     for shape in self.model:
                         if shape.note == "ab4":
                             shape.disp = True
@@ -44,7 +61,7 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_a and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
+                    #print('aa####444')
                     for shape in self.model:
                         if shape.note == "a#4":
                             shape.disp = True
@@ -70,7 +87,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_s and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "b#4":
                             shape.disp = True
@@ -87,7 +103,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_d and (event.mod & pygame.KMOD_CTRL):
-                    #print('aaaaaaaaaaaaaaaa')
                     for shape in self.model:
                         if shape.note == "cb4":
                             shape.disp = True
@@ -96,7 +111,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_d and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "c#4":
                             shape.disp = True
@@ -114,7 +128,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_f and (event.mod & pygame.KMOD_CTRL):
-                    #print('aaaaaaaaaaaaaaaa')
                     for shape in self.model:
                         if shape.note == "db4":
                             shape.disp = True
@@ -123,7 +136,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_f and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "d#4":
                             shape.disp = True
@@ -140,7 +152,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_g and (event.mod & pygame.KMOD_CTRL):
-                    #print('aaaaaaaaaaaaaaaa')
                     for shape in self.model:
                         if shape.note == "eb4":
                             shape.disp = True
@@ -149,7 +160,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_g and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "e#4":
                             shape.disp = True
@@ -166,7 +176,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_h and (event.mod & pygame.KMOD_CTRL):
-                    #print('aaaaaaaaaaaaaaaa')
                     for shape in self.model:
                         if shape.note == "fb4":
                             shape.disp = True
@@ -175,7 +184,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_h and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "f#4":
                             shape.disp = True
@@ -192,7 +200,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_j and (event.mod & pygame.KMOD_CTRL):
-                    #print('aaaaaaaaaaaaaaaa')
                     for shape in self.model:
                         if shape.note == "gb4":
                             shape.disp = True
@@ -201,7 +208,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_j and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "g#4":
                             shape.disp = True
@@ -217,10 +223,14 @@ class Controller(object):
                             effect.play()
                         else:
                             shape.disp = False
-#second octive starts here
-            elif self.octive == 5:
+#second octave starts here
+            elif self.octave == 5:
+                '''
+                This code does the same thing as the code above, however it
+                now will play notes in the 5th octave (one octave higher).
+                '''
                 if event.key == pygame.K_a and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
+                    #print('aa####')
                     for shape in self.model:
                         if shape.note == "a#5":
                             shape.disp = True
@@ -229,7 +239,7 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_a and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
+                    #print('aabbbbb')
                     for shape in self.model:
                         if shape.note == "ab5":
                             shape.disp = True
@@ -238,6 +248,7 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_a:
+                    #print('aaaaaaaaaaa')
                     for shape in self.model:
                         if shape.note == "a5":
                             shape.disp = True
@@ -246,7 +257,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_s and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "b#5":
                             shape.disp = True
@@ -255,7 +265,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_s and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "bb5":
                             shape.disp = True
@@ -272,7 +281,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_d and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "c#5":
                             shape.disp = True
@@ -281,7 +289,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_d and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "cb5":
                             shape.disp = True
@@ -298,7 +305,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_f and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "d#5":
                             shape.disp = True
@@ -307,7 +313,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_f and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "db5":
                             shape.disp = True
@@ -324,7 +329,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_g and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "e#5":
                             shape.disp = True
@@ -333,7 +337,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_g and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "eb5":
                             shape.disp = True
@@ -350,7 +353,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_h and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "f#5":
                             shape.disp = True
@@ -359,7 +361,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_h and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "fb5":
                             shape.disp = True
@@ -376,7 +377,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_j and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "g#5":
                             shape.disp = True
@@ -385,7 +385,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_j and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "gb5":
                             shape.disp = True
@@ -401,10 +400,14 @@ class Controller(object):
                             effect.play()
                         else:
                             shape.disp = False
-#lower 3rd octive
-            elif self.octive == 3:
+#lower 3rd octave
+            elif self.octave == 3:
+                '''
+                Same code as above, however it now will play notes in the 3rd octive
+                (one below middle C).
+                '''
                 if event.key == pygame.K_a and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
+                    #print('aa####3333')
                     for shape in self.model:
                         if shape.note == "a#3":
                             shape.disp = True
@@ -413,7 +416,7 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_a and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
+                    #print('aabbbb333')
                     for shape in self.model:
                         if shape.note == "ab3":
                             shape.disp = True
@@ -422,6 +425,7 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_a:
+                    #print('aaaaaaaa333333')
                     for shape in self.model:
                         if shape.note == "a3":
                             shape.disp = True
@@ -430,7 +434,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_s and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "b#3":
                             shape.disp = True
@@ -439,7 +442,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_s and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "bb3":
                             shape.disp = True
@@ -456,7 +458,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_d and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "c#3":
                             shape.disp = True
@@ -465,7 +466,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_d and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "cb3":
                             shape.disp = True
@@ -482,7 +482,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_f and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "d#3":
                             shape.disp = True
@@ -491,7 +490,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_f and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "db3":
                             shape.disp = True
@@ -508,7 +506,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_g and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "e#3":
                             shape.disp = True
@@ -517,7 +514,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_g and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "eb3":
                             shape.disp = True
@@ -534,7 +530,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_h and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "f#3":
                             shape.disp = True
@@ -543,7 +538,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_h and (event.mod & pygame.KMOD_CTRL):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "fb3":
                             shape.disp = True
@@ -560,7 +554,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_j and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "g#3":
                             shape.disp = True
@@ -569,7 +562,6 @@ class Controller(object):
                         else:
                             shape.disp = False
                 elif event.key == pygame.K_j and (event.mod & pygame.KMOD_SHIFT):
-                    #print('aa####$$$')
                     for shape in self.model:
                         if shape.note == "gb3":
                             shape.disp = True
@@ -585,19 +577,23 @@ class Controller(object):
                             effect.play()
                         else:
                             shape.disp = False
-        #this will play the note selected by the if statement
-        # instantiate PyAudio
 
 class View(object):
+    '''
+    The View class hold the different shapes and colors for every different not
+    in the three octaves. if the shape specified by a cretai key press is pressed
+    the shape assigned to that note will be called and the shape and color assigned
+    th the object will be displayed as the sound plays.
+    '''
     def __init__(self, model, surface):
         self.model = model
         self.surface = surface
 
     def draw(self):
-        for shape in self.model:
-            if shape.note == "a4":
-                if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,0,0), (100,100), 100)
+        for shape in self.model: #for the specific shape in the model list
+            if shape.note == "a4": #if it is a specific note
+                if shape.disp == True: #turn the disp (defalting to False) to True
+                    pygame.draw.circle(self.surface, (255,0,0), (100,100), 100) #disp shape/color
             elif shape.note == "a#4":
                 if shape.disp == True:
                     pygame.draw.circle(self.surface, (0,3,0), (100,100), 100)
@@ -787,11 +783,11 @@ class View(object):
 
 if __name__ ==  "__main__":
     pygame.init()
-    screen = pygame.display.set_mode((800, 600)) # window size, as a tuple
+    screen = pygame.display.set_mode((800, 600)) #window size, as a tuple
     pygame.display.set_caption('Maggie and Aurora')
 
 
-    shape1 = Shape("a4")
+    shape1 = Shape("a4") #each shape is an object that is created to represent each different note
     shape1s = Shape("a#4")
     shape1b = Shape("ab4")
     shape2 = Shape("b4")
@@ -855,7 +851,16 @@ if __name__ ==  "__main__":
     shape21b = Shape("gb3")
     shape21s = Shape("g#3")
 
-    model = [shape1, shape1b, shape1s, shape2, shape2b, shape2s, shape3, shape3b, shape3s, shape4, shape4b, shape4s, shape5, shape5b, shape5s, shape6, shape6b, shape6s, shape7, shape7b, shape7s, shape8, shape8b, shape8s, shape9, shape9b, shape9s, shape10, shape10b, shape10s, shape11, shape11b, shape11s, shape12, shape12b, shape12s, shape13, shape13b, shape13s, shape14, shape14b, shape14s, shape15, shape15s, shape15b, shape16, shape16b, shape16s, shape17, shape17s, shape17b, shape18, shape18b, shape18s, shape19, shape19s, shape19b, shape20, shape20s, shape20b, shape21, shape21s, shape21b]
+    # model is a list containing every shape object
+    model = [shape1, shape1b, shape1s, shape2, shape2b, shape2s, shape3,
+    shape3b, shape3s, shape4, shape4b, shape4s, shape5, shape5b, shape5s,
+    shape6, shape6b, shape6s, shape7, shape7b, shape7s, shape8, shape8b,
+    shape8s, shape9, shape9b, shape9s, shape10, shape10b, shape10s, shape11,
+    shape11b, shape11s, shape12, shape12b, shape12s, shape13, shape13b,
+    shape13s, shape14, shape14b, shape14s, shape15, shape15s, shape15b,
+    shape16, shape16b, shape16s, shape17, shape17s, shape17b, shape18,
+    shape18b, shape18s, shape19, shape19s, shape19b, shape20, shape20s,
+    shape20b, shape21, shape21s, shape21b]
 
     my_controller = Controller(model)
     my_screen = View(model, screen)
@@ -866,7 +871,7 @@ if __name__ ==  "__main__":
                 running = False
             else:
                 my_controller.input_event(event)
-        screen.fill((0,0,0)) # RGB tuple for black
+        screen.fill((0,0,0)) #screen will start out black
         my_screen.draw()
         pygame.display.update()
 
