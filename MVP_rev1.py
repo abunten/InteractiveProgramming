@@ -596,10 +596,10 @@ class View(object):
                     pygame.draw.circle(self.surface, (255,0,0), (100,100), 100) #disp shape/color
             elif shape.note == "a#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,3,0), (100,100), 100)
+                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
             elif shape.note == "ab4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,3,0), (100,100), 100)
+                    pygame.draw.circle(self.surface, (0,3,100), (100,100), 100)
             elif shape.note == "b4":
                 if shape.disp == True:
                     pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
@@ -784,7 +784,7 @@ class View(object):
 if __name__ ==  "__main__":
     pygame.init()
     screen = pygame.display.set_mode((800, 600)) #window size, as a tuple
-    pygame.display.set_caption('Maggie and Aurora')
+    pygame.display.set_caption('Music Visualization by Maggie and Aurora')
 
 
     shape1 = Shape("a4") #each shape is an object that is created to represent each different note
