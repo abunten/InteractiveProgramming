@@ -1,6 +1,9 @@
 # InteractiveProgramming
 This is the base repo for the interactive programming project for Software Design, Spring 2016 at Olin College.
 
+## How to run the code
+In order to run our program, simply run the code in terminal and press on some keys. The number keys 3, 4, and 5 will select the octave, but it will default to the 4th just incase you forget. The keys A - J on a QWERT keyboard will play the natural notes A - G and, keys Q - U will play the sharps, and Z - M will play the flats. In order to play longer notes simply press and hold down shift as you press a key. 
+
 ## Project Overview
 
 For our Interactive Programming project we turned the keyboard of the computer into something like the keyboard of a piano where different notes could be played with different keys. The user can choose any note in three octaves and the length of the note. The keys associated with each note are organized on the keyboard to be user friendly and intuitive. In order to visualize the different notes, each note is associated with a specific shape in a specific color. The the sharp and flat of a specific note display the same shape in the same color, but the color gets brighter and lighter depending on whether the note is a sharp or a flat.
