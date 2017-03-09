@@ -15,7 +15,7 @@ A specific shape is also assigned to each note with a specific color depending o
 
 Link to a video of the program working: 
 
-[link text itself]: https://drive.google.com/file/d/0B_BxF5xN1dGGYzhsOEoybUFOTFE/view?usp=drivesdk
+[link text itself]:https://drive.google.com/file/d/0B_BxF5xN1dGGYzhsOEoybUFOTFE/view?usp=drivesdk
 
 ## Implementation
 Our program used an input from the user to a controller to access a shape object created and stored in our model class. Each shape object is associated with a specific note and shape which corresponds to a wave file in the controller class and a geometric shape in the view class. After a key is pressed, the shape object that is associated with that key is used to find and play the correct wave file and display the correct geometric image. 
