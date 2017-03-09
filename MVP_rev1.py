@@ -775,258 +775,279 @@ class View(object):
 
     def draw(self):
         for shape in self.model: #for the specific shape in the model list
+            #a
             if shape.note == "a4": #if it is a specific note
                 if shape.disp == True: #turn the disp (defalting to False) to True
-                    pygame.draw.circle(self.surface, (255,0,0), (100,100), 100) #disp shape/color
+                    pygame.draw.circle(self.surface, (215, 1, 36), (200,400), 100) #disp shape/color
             elif shape.note == "a#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.circle(self.surface, (254, 75, 55), (200,400), 100)
             elif shape.note == "a42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.circle(self.surface, (215, 1, 36), (200,400), 100)
             elif shape.note == "ab4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,3,100), (100,100), 100)
+                    pygame.draw.circle(self.surface, (154, 1, 36), (200,400), 100)
+            #b
             elif shape.note == "b4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 188), (400, 200, 200, 200))
             elif shape.note == "b42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 188), (400, 200, 200, 200))
             elif shape.note == "bb4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 98), (400, 200, 200, 200))
             elif shape.note == "b#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 255), (400, 200, 200, 200))
+            #c
             elif shape.note == "c4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,0,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (153,51,255), [[600,50], [400, 200], [550,400]])
             elif shape.note == "c42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (153,51,255), [[600,50], [400, 200], [550,400]])
             elif shape.note == "cb4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (116,23,151), [[600,50], [400, 200], [550,400]])
             elif shape.note == "c#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (207,149,255), [[600,50], [400, 200], [550,400]])
+            #d
             elif shape.note == "d4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,51,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 218, 87), (200, 200, 50, 50), 200)
             elif shape.note == "d42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 218, 87), (200, 200, 50, 50), 200)
             elif shape.note == "db4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (254, 185, 68), (200, 200, 50, 50), 200)
             elif shape.note == "d#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 255, 87), (200, 200, 50, 50), 200)
+            #e
             elif shape.note == "e4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (51,255,153), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,158,200), [100,300,100,300])
             elif shape.note == "e42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,158,220), [100,300,100,300])
             elif shape.note == "eb4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (212,15,128), [100,300,100,300])
             elif shape.note == "e#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,15,220), [100,300,100,300])
+            #f
             elif shape.note == "f4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (254,149,31), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "f42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (255,149,31), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "fb4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,153,51), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (229,104,0), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "f#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (255,82,17), [[50,150], [150, 50], [250,150], [150,250]])
+            #g
             elif shape.note == "g4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,166,107), (500, 300, 100, 200))
             elif shape.note == "g42":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,100,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,166,107), (500, 300, 100, 200))
             elif shape.note == "gb4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,153,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (0,96,45), (500, 300, 100, 200))
             elif shape.note == "g#4":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,0), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,253,107), (500, 300, 100, 200))
+            #a
             elif shape.note == "a5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (215, 1, 36), (200,400), 100)
             elif shape.note == "a52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (215, 1, 36), (200,400), 100)
             elif shape.note == "ab5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (154, 1, 36), (200,400), 100)
             elif shape.note == "a#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (254, 75, 55), (200,400), 100)
+            #b
             elif shape.note == "b5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 188), (400, 200, 200, 200))
             elif shape.note == "b52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 188), (400, 200, 200, 200))
             elif shape.note == "bb5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 98), (400, 200, 200, 200))
             elif shape.note == "b#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 255), (400, 200, 200, 200))
+            #c
             elif shape.note == "c5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,128,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (153,51,255), [[600,50], [400, 200], [550,400]])
             elif shape.note == "c52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (153,51,255), [[600,50], [400, 200], [550,400]])
             elif shape.note == "cb5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (116,23,151), [[600,50], [400, 200], [550,400]])
             elif shape.note == "c#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (207,149,255), [[600,50], [400, 200], [550,400]])
+            #d
             elif shape.note == "d5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,128), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 218, 87), (200, 200, 50, 50), 200)
             elif shape.note == "d52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 218, 87), (200, 200, 50, 50), 200)
             elif shape.note == "db5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (254, 185, 68), (200, 200, 50, 50), 200)
             elif shape.note == "d#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 255, 87), (200, 200, 50, 50), 200)
+            #e
             elif shape.note == "eb5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (212,15,128), [100,300,100,300])
             elif shape.note == "e#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,15,220), [100,300,100,300])
             elif shape.note == "e5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (128,0,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,158,200), [100,300,100,300])
             elif shape.note == "e52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,158,200), [100,300,100,300])
+            #f
             elif shape.note == "f5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,0,127), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (254,149,31), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "f52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (255,149,31), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "fb5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (229,104,0), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "f#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (255,82,17), [[50,150], [150, 50], [250,150], [150,250]])
+            #g
             elif shape.note == "g5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,51), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,166,107), (500, 300, 100, 200))
             elif shape.note == "g52":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,166,107), (500, 300, 100, 200))
             elif shape.note == "gb5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (0,96,45), (500, 300, 100, 200))
             elif shape.note == "g#5":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,253,107), (500, 300, 100, 200))
+            #a
             elif shape.note == "a3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (215, 1, 36), (200,400), 100)
             elif shape.note == "a32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (215, 1, 36), (200,400), 100)
             elif shape.note == "ab3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (154, 1, 36), (200,400), 100)
             elif shape.note == "a#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.circle(self.surface, (254, 75, 55), (200,400), 100)
+            #b
             elif shape.note == "b3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 188), (400, 200, 200, 200))
             elif shape.note == "b32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 188), (400, 200, 200, 200))
             elif shape.note == "bb3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 98), (400, 200, 200, 200))
             elif shape.note == "b#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (3, 10, 255), (400, 200, 200, 200))
+            #c
             elif shape.note == "c3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,128,0), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (153,51,255), [[600,50], [400, 200], [550,400]])
             elif shape.note == "c32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (153,51,255), [[600,50], [400, 200], [550,400]])
             elif shape.note == "cb3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (116,23,151), [[600,50], [400, 200], [550,400]])
             elif shape.note == "c#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (207,149,255), [[600,50], [400, 200], [550,400]])
+            #d
             elif shape.note == "d3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (0,255,128), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 218, 87), (200, 200, 50, 50), 200)
             elif shape.note == "d32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 218, 87), (200, 200, 50, 50), 200)
             elif shape.note == "db3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (254, 185, 68), (200, 200, 50, 50), 200)
             elif shape.note == "d#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (253, 255, 87), (200, 200, 50, 50), 200)
+            #e
             elif shape.note == "eb3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (212,15,128), [100,300,100,300])
             elif shape.note == "e32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,158,220), [100,300,100,300])
             elif shape.note == "e#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (212,15,220), [100,300,100,300])
             elif shape.note == "e3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (128,0,255), (100,100), 100)
+                    pygame.draw.ellipse(self.surface, (255,158,200), [100,300,100,300])
+            #f
             elif shape.note == "f3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,0,127), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (254,149,31), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "f32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (255,149,31), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "fb3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (229,104,0), [[50,150], [150, 50], [250,150], [150,250]])
             elif shape.note == "f#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.polygon(self.surface, (255,82,17), [[50,150], [150, 50], [250,150], [150,250]])
+            #g
             elif shape.note == "g3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,51), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,166,107), (500, 300, 100, 200))
             elif shape.note == "g32":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (255,255,153), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,166,107), (500, 300, 100, 200))
             elif shape.note == "gb3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (0,96,45), (500, 300, 100, 200))
             elif shape.note == "g#3":
                 if shape.disp == True:
-                    pygame.draw.circle(self.surface, (153,255,255), (100,100), 100)
+                    pygame.draw.rect(self.surface, (105,253,107), (500, 300, 100, 200))
 
 if __name__ ==  "__main__":
     pygame.init()
